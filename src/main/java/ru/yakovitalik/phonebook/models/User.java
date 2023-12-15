@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
+/**
+ * Класс используется для аутентификации и авторизации
+ * содержит имя и пароль пользователя
+ * */
 @Entity
 @Table(name = "Users")
 public class User {
