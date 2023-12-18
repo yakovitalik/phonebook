@@ -1,16 +1,19 @@
 package ru.yakovitalik.phonebook.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
-import ru.yakovitalik.phonebook.models.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import ru.yakovitalik.phonebook.models.ProgramUser;
 
 import java.util.Collection;
 
-public class UserDetails implements org.springframework.security.core.userdetails.UserDetails {
+public class ProgramUserDetails implements UserDetails {
 
-    private final User user;
+    private final ProgramUser programUser;
 
-    public UserDetails(User user) {
-        this.user = user;
+    @Autowired
+    public ProgramUserDetails(ProgramUser programUser) {
+        this.programUser = programUser;
     }
 
     @Override
@@ -20,12 +23,12 @@ public class UserDetails implements org.springframework.security.core.userdetail
 
     @Override
     public String getPassword() {
-        return this.user.getPassword();
+        return this.programUser.getPassword();
     }
 
     @Override
     public String getUsername() {
-        return this.user.getUsername();
+        return this.programUser.getUsername();
     }
 
     @Override
@@ -46,5 +49,10 @@ public class UserDetails implements org.springframework.security.core.userdetail
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    // Чтобы получать данные аутентифицированного пользователя
+    public ProgramUser getProgramUser() {
+        return this.programUser;
     }
 }

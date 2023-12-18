@@ -10,7 +10,7 @@ import jakarta.validation.constraints.Size;
  * */
 @Entity
 @Table(name = "Users")
-public class User {
+public class ProgramUser {
 
     @Id
     @Column(name = "id")
@@ -25,10 +25,10 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    public User() {
+    public ProgramUser() {
     }
 
-    public User(String username) {
+    public ProgramUser(String username) {
         this.username = username;
     }
 
@@ -58,7 +58,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "ProgramUser{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
