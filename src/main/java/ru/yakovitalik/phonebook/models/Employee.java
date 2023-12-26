@@ -9,13 +9,13 @@ import jakarta.validation.constraints.Size;
  * Содержит данные сотрудника.
  * */
 @Entity
-@Table(name = "Employee")
+@Table(name = "employee")
 public class Employee {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
 
     @NotEmpty(message = "ФИО не должны быть пустыми!")
     @Size(min = 2, max = 100, message = "Имя должно быть от 2 до 100 символов")
@@ -35,18 +35,24 @@ public class Employee {
     @Column(name = "email")
     private String email;
 
+    @ManyToOne
+    @JoinColumn(name = "department", referencedColumnName = "id")
+    private Department department;
+
     public Employee() {
     }
 
-    public Employee(String fullName, String position, String phoneNumber, String mobileNumber, String email) {
+    public Employee(String fullName, String position, String phoneNumber, String mobileNumber,
+                    String email, Department department) {
         this.fullName = fullName;
         this.position = position;
         this.phoneNumber = phoneNumber;
         this.mobileNumber = mobileNumber;
         this.email = email;
+        this.department = department;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
