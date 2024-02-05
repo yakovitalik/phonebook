@@ -36,7 +36,7 @@ public class Employee {
     private String email;
 
     @ManyToOne
-    @JoinColumn(name = "department", referencedColumnName = "id")
+    @JoinColumn(name = "department_id", referencedColumnName = "id")
     private Department department;
 
     public Employee() {

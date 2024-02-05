@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="insert_into_department" author="yakovitalik">
+        <!-- Добавляем подразделения верхнего уровня -->
+        <insert tableName="department">
+            <column name="title" value="Руководство" />
+            <column name="parent_department" value="Компания" />
+        </insert>
+        <insert tableName="department">
+            <column name="title" value="Управление эксплуатации" />
+            <column name="parent_department" value="Компания" />
+        </insert>
+        <insert tableName="department">
+            <column name="title" value="Управление логистики" />
+            <column name="parent_department" value="Компания" />
+        </insert>
+        <insert tableName="department">
+            <column name="title" value="Управление реализации" />
+            <column name="parent_department" value="Компания" />
+        </insert>
+        <insert tableName="department">
+            <column name="title" value="Финансовое управление" />
+            <column name="parent_department" value="Компания" />
+        </insert>
+        <insert tableName="department">
+            <column name="title" value="Управление по работе с персоналом" />
+            <column name="parent_department" value="Компания" />
+        </insert>
+        <insert tableName="department">
+            <column name="title" value="Бухгалтерия" />
+            <column name="parent_department" value="Компания" />
+        </insert>
+
+        <!-- Добавляем подразделения второго уровня -->
+        <insert tableName="department">
+            <column name="title" value="Отдел ремонтов" />
+            <column name="parent_department" value="Управление эксплуатации" />
+        </insert>
+        <insert tableName="department">
+            <column name="title" value="Производственно-технический отдел" />
+            <column name="parent_department" value="Управление эксплуатации" />
+        </insert>
+        <insert tableName="department">
+            <column name="title" value="Отдел закупок" />
+            <column name="parent_department" value="Управление логистики" />
+        </insert>
+        <insert tableName="department">
+            <column name="title" value="Отдел транспорта" />
+            <column name="parent_department" value="Управление логистики" />
+        </insert>
+        <insert tableName="department">
+            <column name="title" value="Экономический отдел" />
+            <column name="parent_department" value="Финансовое управление" />
+        </insert>
+        <insert tableName="department">
+            <column name="title" value="Отдел бизнес-планирования" />
+            <column name="parent_department" value="Финансовое управление" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>

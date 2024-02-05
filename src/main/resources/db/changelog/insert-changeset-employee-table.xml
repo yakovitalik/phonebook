@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="insert_into_employee" author="yakovitalik">
+        <preConditions onFail="WARN">
+            <sqlCheck expectedResult="13">select count(*) from department</sqlCheck>
+        </preConditions>
+        <comment>Проверяем, что в нашей таблице department есть 13 записей перед добавлением сотрудника</comment>
+
+        <!-- Добавляем сотрудников в таблицу -->
+        <insert tableName="employee">
+            <column name="username" value="Антонов Иван Николаевич" />
+            <column name="position" value="Генеральный директор" />
+            <column name="phone_number" value="+7 (4722) 28-52-11" />
+            <column name="mobile_number" value="89803985211" />
+            <column name="email" value="antonov.in@compmail.ru" />
+            <column name="department_id" value="1" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Иванов Василий Андреевич" />
+            <column name="position" value="Главный инженер" />
+            <column name="phone_number" value="+7 (4722) 28-52-12" />
+            <column name="mobile_number" value="89803985212" />
+            <column name="email" value="ivanov.va@compmail.ru" />
+            <column name="department_id" value="1" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Васильев Андрей Иванович" />
+            <column name="position" value="Начальник управления" />
+            <column name="phone_number" value="+7 (4722) 28-52-13" />
+            <column name="mobile_number" value="89803985213" />
+            <column name="email" value="vasilev.ai@compmail.ru" />
+            <column name="department_id" value="2" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Лукъянов Иван Михайлович" />
+            <column name="position" value="Начальник управления" />
+            <column name="phone_number" value="+7 (4722) 28-52-14" />
+            <column name="mobile_number" value="89803985214" />
+            <column name="email" value="lukyanov.im@compmail.ru" />
+            <column name="department_id" value="3" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Гатилов Александр Андреевич" />
+            <column name="position" value="Начальник управления" />
+            <column name="phone_number" value="+7 (4722) 28-52-15" />
+            <column name="mobile_number" value="89803985215" />
+            <column name="email" value="gatilov.aa@compmail.ru" />
+            <column name="department_id" value="4" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Петров Роман Эдуардович" />
+            <column name="position" value="Начальник управления" />
+            <column name="phone_number" value="+7 (4722) 28-52-16" />
+            <column name="mobile_number" value="89803985216" />
+            <column name="email" value="petrov.re@compmail.ru" />
+            <column name="department_id" value="5" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Симонов Валентин Петрович" />
+            <column name="position" value="Начальник управления" />
+            <column name="phone_number" value="+7 (4722) 28-52-17" />
+            <column name="mobile_number" value="89803985217" />
+            <column name="email" value="simonov.vp@compmail.ru" />
+            <column name="department_id" value="6" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Мамонтов Илья Николаевич" />
+            <column name="position" value="Главный бухгалтер" />
+            <column name="phone_number" value="+7 (4722) 28-52-18" />
+            <column name="mobile_number" value="89803985218" />
+            <column name="email" value="mamontov.in@compmail.ru" />
+            <column name="department_id" value="7" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Новоселов Александр Николаевич" />
+            <column name="position" value="Начальник отдела" />
+            <column name="phone_number" value="+7 (4722) 28-52-19" />
+            <column name="mobile_number" value="89803985219" />
+            <column name="email" value="novoselov.an@compmail.ru" />
+            <column name="department_id" value="8" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Сидоров Андрей Иванович" />
+            <column name="position" value="Ведущий инженер" />
+            <column name="phone_number" value="+7 (4722) 28-52-20" />
+            <column name="mobile_number" value="89803985220" />
+            <column name="email" value="sidorov.ai@compmail.ru" />
+            <column name="department_id" value="8" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Протопов Григорий Васильевич" />
+            <column name="position" value="Инженер 1 категории" />
+            <column name="phone_number" value="+7 (4722) 28-52-21" />
+            <column name="mobile_number" value="89803985221" />
+            <column name="email" value="protopov.gv@compmail.ru" />
+            <column name="department_id" value="8" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Халматов Антон Иванович" />
+            <column name="position" value="Начальник отдела" />
+            <column name="phone_number" value="+7 (4722) 28-52-22" />
+            <column name="mobile_number" value="89803985222" />
+            <column name="email" value="halmatov.ai@compmail.ru" />
+            <column name="department_id" value="9" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Перепитчай Геннадий Андреевич" />
+            <column name="position" value="Ведущий инженер" />
+            <column name="phone_number" value="+7 (4722) 28-52-23" />
+            <column name="mobile_number" value="89803985223" />
+            <column name="email" value="perepitchai.ga@compmail.ru" />
+            <column name="department_id" value="9" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Андросов Виктор Иванович" />
+            <column name="position" value="Инженер 1 категории" />
+            <column name="phone_number" value="+7 (4722) 28-52-24" />
+            <column name="mobile_number" value="89803985224" />
+            <column name="email" value="androsov.vi@compmail.ru" />
+            <column name="department_id" value="9" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Притвина Алена Васильевна" />
+            <column name="position" value="Начальник отдела" />
+            <column name="phone_number" value="+7 (4722) 28-52-25" />
+            <column name="mobile_number" value="89803985225" />
+            <column name="email" value="pritvina.av@compmail.ru" />
+            <column name="department_id" value="10" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Шишкин Николай Иванович" />
+            <column name="position" value="Ведущий специалист" />
+            <column name="phone_number" value="+7 (4722) 28-52-26" />
+            <column name="mobile_number" value="89803985226" />
+            <column name="email" value="shishkin.ni@compmail.ru" />
+            <column name="department_id" value="10" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Милитова Антонина Сергеевна" />
+            <column name="position" value="Специалист 1 категории" />
+            <column name="phone_number" value="+7 (4722) 28-52-27" />
+            <column name="mobile_number" value="89803985227" />
+            <column name="email" value="militova.as@compmail.ru" />
+            <column name="department_id" value="10" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Гончарова Ольга Ивановна" />
+            <column name="position" value="Начальник отдела" />
+            <column name="phone_number" value="+7 (4722) 28-52-28" />
+            <column name="mobile_number" value="89803985228" />
+            <column name="email" value="goncharova.oi@compmail.ru" />
+            <column name="department_id" value="11" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Беспалова Анна Викторовна" />
+            <column name="position" value="Ведущий специалист" />
+            <column name="phone_number" value="+7 (4722) 28-52-29" />
+            <column name="mobile_number" value="89803985229" />
+            <column name="email" value="bespalova.av@compmail.ru" />
+            <column name="department_id" value="11" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Никитина Виктория Валерьевна" />
+            <column name="position" value="Специалист 1 категории" />
+            <column name="phone_number" value="+7 (4722) 28-52-30" />
+            <column name="mobile_number" value="89803985230" />
+            <column name="email" value="nikitina.vv@compmail.ru" />
+            <column name="department_id" value="11" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Леонтьева Ксения Николаевна" />
+            <column name="position" value="Начальник отдела" />
+            <column name="phone_number" value="+7 (4722) 28-52-31" />
+            <column name="mobile_number" value="89803985231" />
+            <column name="email" value="leonteva.kn@compmail.ru" />
+            <column name="department_id" value="12" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Сидоров Виктор Андреевич" />
+            <column name="position" value="Ведущий экономист" />
+            <column name="phone_number" value="+7 (4722) 28-52-32" />
+            <column name="mobile_number" value="89803985232" />
+            <column name="email" value="sidorov.va@compmail.ru" />
+            <column name="department_id" value="12" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Герасимов Михаил Викторович" />
+            <column name="position" value="Экономист 1 категории" />
+            <column name="phone_number" value="+7 (4722) 28-52-33" />
+            <column name="mobile_number" value="89803985233" />
+            <column name="email" value="gerasimov.mv@compmail.ru" />
+            <column name="department_id" value="12" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Никонова Ирина Валерьевна" />
+            <column name="position" value="Начальник отдела" />
+            <column name="phone_number" value="+7 (4722) 28-52-34" />
+            <column name="mobile_number" value="89803985234" />
+            <column name="email" value="nikonova.iv@compmail.ru" />
+            <column name="department_id" value="13" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Звягинцева Анна Николаевна" />
+            <column name="position" value="Ведущий специалист" />
+            <column name="phone_number" value="+7 (4722) 28-52-35" />
+            <column name="mobile_number" value="89803985235" />
+            <column name="email" value="zvyagintseva.an@compmail.ru" />
+            <column name="department_id" value="13" />
+        </insert>
+        <insert tableName="employee">
+            <column name="username" value="Вендин Алексей Николаевич" />
+            <column name="position" value="Специалист 1 категории" />
+            <column name="phone_number" value="+7 (4722) 28-52-36" />
+            <column name="mobile_number" value="89803985236" />
+            <column name="email" value="vendin.an@compmail.ru" />
+            <column name="department_id" value="13" />
+        </insert>
+    </changeSet>
+</databaseChangeLog>
